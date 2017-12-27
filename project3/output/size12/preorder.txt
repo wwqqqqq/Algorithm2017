@@ -1,0 +1,12 @@
+key: 418 	color: BLACK	rank: 7 	size: 12	parent: NIL 	lchild: 217 	rchild: 856 
+key: 217 	color: RED  	rank: 3 	size: 6 	parent: 418 	lchild: 208 	rchild: 380 
+key: 208 	color: BLACK	rank: 2 	size: 2 	parent: 217 	lchild: 58  	rchild: NIL 
+key: 58  	color: RED  	rank: 1 	size: 1 	parent: 208 	lchild: NIL 	rchild: NIL 
+key: 380 	color: BLACK	rank: 5 	size: 3 	parent: 217 	lchild: 252 	rchild: 396 
+key: 252 	color: RED  	rank: 4 	size: 1 	parent: 380 	lchild: NIL 	rchild: NIL 
+key: 396 	color: RED  	rank: 6 	size: 1 	parent: 380 	lchild: NIL 	rchild: NIL 
+key: 856 	color: RED  	rank: 10	size: 5 	parent: 418 	lchild: 447 	rchild: 944 
+key: 447 	color: BLACK	rank: 8 	size: 2 	parent: 856 	lchild: NIL 	rchild: 836 
+key: 836 	color: RED  	rank: 9 	size: 1 	parent: 447 	lchild: NIL 	rchild: NIL 
+key: 944 	color: BLACK	rank: 11	size: 2 	parent: 856 	lchild: NIL 	rchild: 977 
+key: 977 	color: RED  	rank: 12	size: 1 	parent: 944 	lchild: NIL 	rchild: NIL 
