@@ -1,2 +1,2 @@
-key: 131 	color: RED  	rank: 4 	size: 1 	parent: 189 	lchild: NIL 	rchild: NIL 
-key: 27  	color: BLACK	rank: 2 	size: 2 	parent: 125 	lchild: 5   	rchild: NIL 
+key: 528 	color: RED  	rank: 3 	size: 1 	parent: 446 	lchild: NIL 	rchild: NIL 
+key: 144 	color: RED  	rank: 2 	size: 3 	parent: 584 	lchild: 128 	rchild: 446 

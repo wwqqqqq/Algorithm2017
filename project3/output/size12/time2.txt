@@ -1,2 +1,2 @@
-delete node n/3: st=4133	ed=4135	2.000
-delete node n/4: st=4190	ed=4192	2.000
+delete node n/3: st=5029	ed=5032	3.000
+delete node n/4: st=5141	ed=5146	5.000

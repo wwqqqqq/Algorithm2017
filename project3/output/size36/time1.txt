@@ -1,5 +1,5 @@
-insert 1~10:	st=7207	ed=7214	7.000
-insert 11~20:	st=7214	ed=7233	19.000
-insert 21~30:	st=7233	ed=7245	12.000
-insert 31~36:	st=7245	ed=7252	7.000
-total Time:	st=7207	ed=7252	45.000
+insert 1~10:	st=9651	ed=9660	9.000
+insert 11~20:	st=9660	ed=9683	23.000
+insert 21~30:	st=9683	ed=9697	14.000
+insert 31~36:	st=9697	ed=9705	8.000
+total Time:	st=9651	ed=9705	54.000
