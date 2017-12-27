@@ -42,6 +42,7 @@ int main(void)
         int j;
         FILE *result;
         FILE *time;
+	RBTree T=Init_RBTree();
         time = open_outputfile(n, TIME_FILE1);
         if(time==NULL)
         {
@@ -49,7 +50,6 @@ int main(void)
             exit(0);
         }
         //实验1部分：初始化一棵红黑树并向其中插入结点
-        RBTree T=Init_RBTree();
         clock_t st_t, ed_t;
         clock_t st, ed;
         st_t = clock();
@@ -62,7 +62,7 @@ int main(void)
             {
                 //count time
                 ed = clock();
-                fprintf(time,"insert %d~%d:\tst=%d\ted=%d\t%.3lf\n",j-8,j+1,st,ed,difftime(ed,st));
+                fprintf(time,"insert %d~%d:\tst=%ld\ted=%ld\t%.3lf\n",j-8,j+1,st,ed,difftime(ed,st));
                 st = ed;
             }
 
@@ -72,8 +72,8 @@ int main(void)
         ed_t = clock();
         ed = ed_t;
         if(j%10!=0)
-            fprintf(time, "insert %d~%d:\tst=%d\ted=%d\t%.3lf\n",(j/10)*10+1,j,st,ed,difftime(ed,st));
-        fprintf(time,"total time:\tst=%d\ted=%d\t%.3lf\n",st_t,ed_t,difftime(ed_t,st_t));
+            fprintf(time, "insert %d~%d:\tst=%ld\ted=%ld\t%.3lf\n",(j/10)*10+1,j,st,ed,difftime(ed,st));
+        fprintf(time,"total time:\tst=%ld\ted=%ld\t%.3lf\n",st_t,ed_t,difftime(ed_t,st_t));
         fclose(time);
         //printf("pre-order:\n");
         result = open_outputfile(n, PRE_RESULT_FILE);
@@ -88,7 +88,7 @@ int main(void)
         RBTree_print_postorder(T,T->root, result);
         fclose(result);
 
-        printf("lab 1 done!\n");
+        printf("lab 1 done!(size = %d)\n",n);
 
 
         //实验2部分：删除n/3, n/4结点
@@ -109,17 +109,15 @@ int main(void)
 
 
         Del_RBTree(T,T->root);
-        printf("here %d\n",n);
     }
-    printf("???");
     return 0;
 }
 
 
 FILE *open_outputfile(int n, const char *filename)
 {
-    char filepath[20];
-    sprintf(filepath,"../output/size%d/%s\0",n,filename);
+    char filepath[50];
+    sprintf(filepath,"../output/size%d/%s",n,filename);
     FILE *outputfile;
     outputfile = fopen(filepath, "w");
     if(outputfile==NULL)

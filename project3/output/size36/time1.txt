@@ -1,5 +1,5 @@
-insert 1~10:	st=46	ed=46	0.000
-insert 11~20:	st=46	ed=46	0.000
-insert 21~30:	st=46	ed=46	0.000
-insert 31~36:	st=46	ed=46	0.000
-total time:	st=46	ed=46	0.000
+insert 1~10:	st=7032	ed=7042	10.000
+insert 11~20:	st=7042	ed=7288	246.000
+insert 21~30:	st=7288	ed=7302	14.000
+insert 31~36:	st=7302	ed=7309	7.000
+total time:	st=7032	ed=7309	277.000
