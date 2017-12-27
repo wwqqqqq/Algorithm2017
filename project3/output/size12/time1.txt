@@ -1,3 +1,3 @@
-insert 1~10:	st=2738	ed=2749	11.000
-insert 11~12:	st=2749	ed=2770	21.000
-total time:	st=2738	ed=2770	32.000
+insert 1~10:	st=2350	ed=2359	9.000
+insert 11~12:	st=2359	ed=2384	25.000
+total Time:	st=2350	ed=2384	34.000

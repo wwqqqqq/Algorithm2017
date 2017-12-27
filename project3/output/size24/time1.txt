@@ -1,4 +1,4 @@
-insert 1~10:	st=4852	ed=4860	8.000
-insert 11~20:	st=4860	ed=4884	24.000
-insert 21~24:	st=4884	ed=4892	8.000
-total time:	st=4852	ed=4892	40.000
+insert 1~10:	st=4817	ed=4828	11.000
+insert 11~20:	st=4828	ed=5064	236.000
+insert 21~24:	st=5064	ed=5074	10.000
+total Time:	st=4817	ed=5074	257.000
