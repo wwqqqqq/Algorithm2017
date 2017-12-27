@@ -41,15 +41,15 @@ int main(void)
         int n=datasize[i];
         int j;
         FILE *result;
-        FILE *time;
-	RBTree T=Init_RBTree();
-        time = open_outputfile(n, TIME_FILE1);
-        if(time==NULL)
+        FILE *Time;
+        Time = open_outputfile(n, TIME_FILE1);
+        if(Time==NULL)
         {
             printf("open time1.txt fail! size = %d\n",n);
             exit(0);
         }
         //实验1部分：初始化一棵红黑树并向其中插入结点
+        RBTree T=Init_RBTree();
         clock_t st_t, ed_t;
         clock_t st, ed;
         st_t = clock();
@@ -62,7 +62,7 @@ int main(void)
             {
                 //count time
                 ed = clock();
-                fprintf(time,"insert %d~%d:\tst=%ld\ted=%ld\t%.3lf\n",j-8,j+1,st,ed,difftime(ed,st));
+                fprintf(Time,"insert %d~%d:\tst=%ld\ted=%ld\t%.3lf\n",j-8,j+1,st,ed,difftime(ed,st));
                 st = ed;
             }
 
@@ -72,9 +72,9 @@ int main(void)
         ed_t = clock();
         ed = ed_t;
         if(j%10!=0)
-            fprintf(time, "insert %d~%d:\tst=%ld\ted=%ld\t%.3lf\n",(j/10)*10+1,j,st,ed,difftime(ed,st));
-        fprintf(time,"total time:\tst=%ld\ted=%ld\t%.3lf\n",st_t,ed_t,difftime(ed_t,st_t));
-        fclose(time);
+            fprintf(Time, "insert %d~%d:\tst=%ld\ted=%ld\t%.3lf\n",(j/10)*10+1,j,st,ed,difftime(ed,st));
+        fprintf(Time,"total Time:\tst=%ld\ted=%ld\t%.3lf\n",st_t,ed_t,difftime(ed_t,st_t));
+        fclose(Time);
         //printf("pre-order:\n");
         result = open_outputfile(n, PRE_RESULT_FILE);
         RBTree_print_preorder(T, T->root, result);
@@ -93,20 +93,27 @@ int main(void)
 
         //实验2部分：删除n/3, n/4结点
         result = open_outputfile(n, DEL_DATA_FILE);
+        Time = open_outputfile(n, TIME_FILE2);
         int t = T->root->size;
         RBNode *x = OS_select(T->root,t/3);
         printf("n=%d\tn/3=%d delete rank %d, key %d\n",t,t/3,OS_rank(T,x),x->key);
+        st = clock();
         RB_delete(T, x);
+        ed = clock();
         RBNode_print(T,x,result);
+        fprintf(Time, "delete node n/3: st=%ld\ted=%ld\t%.3lf\n",st,ed,difftime(ed,st));
         free(x);
         t = T->root->size;
         x = OS_select(T->root,t/4);
         printf("n=%d\tn/4=%d delete rank %d, key %d\n",t,t/4,OS_rank(T,x),x->key);
+        st = clock();
         RB_delete(T, x);
+        ed = clock();
         RBNode_print(T,x,result);
+        fprintf(Time, "delete node n/4: st=%ld\ted=%ld\t%.3lf\n",st,ed,difftime(ed,st));
         free(x);
         fclose(result);
-
+        fclose(Time);
 
         Del_RBTree(T,T->root);
     }
