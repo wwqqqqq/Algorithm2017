@@ -51,11 +51,11 @@ int main(void)
         time1=open_file(OUTPUT,i,"time1.txt","w");
         read_input(i);
         st=clock();
-        while(times--)
+        //while(times--)
             SCC(i);//计算强连通分量
         ed=clock();
-        t=difftime(ed,st)/TIMES;
-        fprintf(time1,"%.2lf",t);
+        t=difftime(ed,st);//TIMES;
+        fprintf(time1,"%.5lf",t);
         fclose(result);
         fclose(time1);
     }
@@ -89,7 +89,6 @@ void SCC(int n)
 
 void DFS(int v,int order[v],int graph)
 {
-    //int v=v_size[n];
     int i;
     for(i=0;i<v;i++)
     {
@@ -116,7 +115,6 @@ void DFS_visit(int v,int u,int graph)
     Time++;
     d[u]=Time;
     color[u]=GRAY;
-    //int v=v_size[n];
     int i;
     if(graph==DFS_GT)
         fprintf(result,"%d",u);
@@ -158,6 +156,8 @@ FILE *open_file(int ioselect, int n,const char *filename,const char *mode)
     }
     return f;
 }
+
+
 
 void generate_input(void)
 //随机生成的有向图信息分别存放到对应数据规模文件夹里面的input.txt文件
