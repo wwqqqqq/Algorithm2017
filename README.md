@@ -1,7 +1,7 @@
 # Algorithm2017
 2017秋算法课程实验
 
-\* 各项目具体要求、实现和目录结构见个project对应的ppt  
+\* 各项目具体要求、实现和目录结构见个project对应的ppt  
 \* review.docx中是算法课程中的涉及的算法和理论的整理
 
 ## project 1
